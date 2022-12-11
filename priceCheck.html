@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Price Check Page</title>
+        <link rel="stylesheet" type="text/css" href="stylePC.css">   
+        <script>
+            function hitungHarga(){
+                let a = document.getElementById("type").value;
+                let b = document.getElementById("day").value;
+                let d = document.getElementById("floor").value;
+                let text1;
+                var i = 0;
+                var j = 0;
+                var k = 0;
+                //kondisi saat lantai lebih dari 5
+                if (d > 5){
+                    if (a == "standard"){
+                        i = (5000 * b) + 1000;
+                        text1 = "Total price : " + i;
+                    } else if (a == "superior"){
+                        i = (6000 * b) + 1000;
+                        text1 = "Total price : " + i;
+                    } else if (a == "deluxe"){
+                        i = (7000 * b) + 1000;
+                        text1 = "Total price : " + i;
+                    }
+                } else {
+                    if (a == "standard"){
+                        i = 5000 * b;
+                        text1 = "Total price : " + i;
+                    } else if (a == "superior"){
+                        i = 6000 * b;
+                        text1 = "Total price : " + i;
+                    } else if (a == "deluxe"){
+                        i = 7000 * b;
+                        text1 = "Total price : " + i;
+                    }
+                }
+                document.getElementById("hargaAwal").innerHTML = text1;
+                //diskon
+                let c = document.getElementById("discount").value;
+                let text2;
+                if (c == "none"){
+                    text2 = "Total discount : 0 ";
+                } else if (c == "member"){
+                    j = i * 0.1
+                    text2 = "Total discount : " + j;
+                } else if (c == "birthday"){
+                    text2 = "Total discount   : 500";
+                }
+                document.getElementById("diskon").innerHTML = text2;
+                //standard
+                if (a == "standard" && c == "none"){
+                    text3 = "Total Payment is : " + i;
+                } else if (a == "standard" && c == "member"){
+                    k = i - j;
+                    text3 = "Total Payment is : " + k;
+                } else if (a == "standard" && c == "birthday"){
+                    k = i - 500;
+                    text3 = "Total Payment is : " + k;
+                } 
+                //superior
+                if(a == "superior" && c == "none"){
+                    text3 = "Total Payment is : " + i;
+                } else if (a == "superior" && c == "member"){
+                    k = i - j;
+                    text3 = "Total Payment is : " + k;
+                } else if (a == "superior" && c == "birthday"){
+                    k = i - 500;
+                    text3 = "Total Payment is : " + k;
+                } 
+                //deluxe
+                if(a == "deluxe" && c == "none"){
+                    text3 = "Total Payment is : " + i;
+                } else if (a == "deluxe" && c == "member"){
+                    k = i - j;
+                    text3 = "Total Payment is : " + k;
+                } else if (a == "deluxe" && c == "birthday"){
+                    k = i - 500;
+                    text3 = "Total Payment is : " + k;
+                }
+                document.getElementById("bayar").innerHTML = text3;
+            }
+        </script>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logoImg">
+                <img class="gambar"src="img/QQWnobg.png"> 
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="priceCheck.html" style="font-weight: bold;">Price Check</a></li>
+                <li><a href="login.html">Log Out</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form name="form" method="post" action="#">
+                <h3>Input to Check the Price</h3>
+                <b>Floor</b>
+                <input id="floor" name="floor" type="text" size="30" placeholder="Enter floor">
+                <br>
+                <b>Type</b>
+                <select id="type" name="type" size="1">
+                    <option value="standard" selected>Standard</option>
+                    <option value="superior">Superior</option>
+                    <option value="deluxe">Deluxe</option>
+                </select>
+                <br>
+                <b>Day(s)</b>
+                <input id="day" name="day" type="text" size="30" placeholder="Enter day">
+                <br>
+                <b>Discount</b>
+                <select id="discount" name="discount" size="1">
+                    <option value="none" selected>None</option>
+                    <option value="member">Member</option>
+                    <option value="birthday">Birthday Promo</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="hitungHarga()">Check</button>
+                <br><br>
+                <p id="hargaAwal" style="color: blue;"></p>
+                <p id="diskon" style="color: blue;"></p><br>
+                <p id="bayar" style="color: red;"></p>
+            </form>
+        </div>   
+    </body>
+    <footer>
+        Copyright &copy; 2022 QQ Hotel
+    </footer>
+</html>

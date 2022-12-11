@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="styleLogin.css"> 
+        <script>
+            function validateForm(){
+                let x = document.forms["form"]["username"].value;
+                let y = document.forms["form"]["password"].value;
+                if (x == ""){
+                    alert("Username must be filled!!");
+                    return false;
+                } else if(y == ""){
+                    alert("Password must be filled!!");
+                    return false;
+                }
+            }
+        </script>  
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logoImg">
+                <img class="gambar"src="img/QQWnobg.png"> 
+            </a>
+        </nav>
+        <div class="container">
+            <form name="form" method="GET" action="index.html"
+            onsubmit="return validateForm()">
+            <h3>Please Login to Enter</h3>
+            <input name="username" type="text" size="30" placeholder="Enter your username here">
+            <br>
+            <input name="password" type="password" size="30" minlength="8" placeholder="Enter your password here">
+            <br><br>
+            <input type="submit" value="Login">
+            </form>
+        </div>
+    </body>
+    <footer>
+        Copyright &copy; 2022 QQ Hotel
+    </footer>
+</html>

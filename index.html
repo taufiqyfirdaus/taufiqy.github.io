@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="styleHome.css">   
+        <script src="jquery-3.6.1.js"></script>
+        <script>
+            var i=0
+            $(document).ready(function(){
+                $('.slide img').hide()
+                showNextImage()
+                setInterval('showNextImage()', 5000)
+            })
+            function showNextImage(){
+                i++
+                $('#sliderImage' + i).appendTo('.slide').fadeIn(500).delay(4000).fadeOut(500)
+                if(i==5){
+                    i=0
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logoImg">
+                <img class="gambar"src="img/QQWnobg.png"> 
+            </a>
+            <ul>
+                <li><a href="index.html" style="font-weight: bold;">Home</a></li>
+                <li><a href="priceCheck.html">Price Check</a></li>
+                <li><a href="login.html">Log Out</a></li>
+            </ul>
+        </nav>
+        <div class="image-container">
+            <div class="slide">
+                <img id="sliderImage1" src="img/Slide1.png">
+            </div>
+            <div class="slide">
+                <img id="sliderImage2" src="img/Slide2.png">
+            </div>
+            <div class="slide">
+                <img id="sliderImage3" src="img/Slide3.png">
+            </div>
+            <div class="slide">
+                <img id="sliderImage4" src="img/Slide4.png">
+            </div>
+            <div class="slide">
+                <img id="sliderImage5" src="img/Slide5.png">
+            </div>
+        </div>
+        <div class="container">
+            <h3>Profile</h3>
+            <p>QQ Hotel adalah hotel bintang 4 dengan lokasi yang sangat strategis. Berlokasi dekat dengan 
+                pusat kota Malang, QQ Hotel merupakan tempat yang tepat bagi untuk menghilangkan penat dan 
+                bersantai sebelum menelusuri kota arema ini. Dari QQ Hotel, para tamu dapat dengan mudah 
+                menikmati akses menuju ke semua sudut kota dan ke berbagai destinasi 
+                wisata yang menarik. <br><br>
+
+                QQ Hotel memiliki 135 kamar dengan 3 tipe kamar: <br><br>
+                
+                &diams; Standar: 121 <br>
+                &diams; Superior: 8 <br>
+                &diams; Deluxe: 6 <br><br>
+                Layanan & fasilitas hotel <br><br>
+                
+                &diams; Akses internet <br>
+                &diams; Kapolagha Restaurant <br>
+                &diams; Tritisan Lounge <br>
+                &diams; Ruang Pertemuan <br>
+                &diams; Kolam renang terbuka <br>
+                &diams; Pusat Kebugaran <br>
+                &diams; Safe deposit box <br>
+                &diams; Layanan laundry & dry cleaning <br>
+                &diams; Layanan concierge selama 24 jam <br>
+                &diams; Layanan kamar selama 24 jam <br>
+                &diams; Layanan keamanan selama 24 jam <br>
+                &diams; Layanan transportasi dari dan ke bandara <br>
+                &diams; Layanan taxi</p>
+        </div>   
+    </body>
+    <footer>
+        Copyright &copy; 2022 QQ Hotel
+    </footer>
+</html>
